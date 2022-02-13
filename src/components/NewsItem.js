@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components'
 
 const NewsItemBlock = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ const NewItem = ({ article }) => {
           </a>
         </div>
       ) }
-      <div class="contents">
+      <div className="contents">
         <h2>
           <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
         </h2>
