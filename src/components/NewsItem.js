@@ -35,12 +35,16 @@ const NewsItemBlock = styled.div`
 
 const NewItem = ({ article }) => {
   const { title, description, url, urlToImage } = article
+  const imgErrorHandler = (e) => {
+    e.currentTarget.src = '../error.png'
+  }
+
   return (
     <NewsItemBlock>
       { urlToImage && (
         <div className="thumbnail">
           <a href={url} target="_blank" rel="noopener noreferrer">
-            <img src={urlToImage} alt="thumbnail"/>
+            <img src={urlToImage} alt="thumbnail" onError={ imgErrorHandler }/>
           </a>
         </div>
       ) }
